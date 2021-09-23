@@ -201,11 +201,12 @@ if __name__=="__main__":
     FTP_HOST = "sv01.xm.com.co"  #Servidor FTP
     FTP_USER = "Usuario_XM" #Usuario
     FTP_PASS = "password"  #Password
+    Siglas_comercializador="NNNN"
     op_estado="1"        ##El estado que maneja los menus
     while op_estado != "0":
         # connect to the FTP server
         ftp = ftplib.FTP(FTP_HOST, FTP_USER, FTP_PASS)
-        ftp.cwd("/UsuariosK/CDNC/SIC/COMERCIA/") #Conexion a la carpeta referentes a los consumos de las fronteras en los AENCs, en este caso se lo ubica en la carpeta de la fronteras relacionadas con CEDENAR
+        ftp.cwd("/UsuariosK/"+Siglas_comercializador+"/SIC/COMERCIA/") #Conexion a la carpeta referentes a los consumos de las fronteras en los AENCs, en este caso se lo ubica en la carpeta de la fronteras relacionadas con CEDENAR
         carpetas=ftp.nlst()  #Lista de las carpetas en la ubicacion del puntero ftp
         string_lista1=""
         i=0
